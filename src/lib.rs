@@ -1,6 +1,6 @@
 use bevy_egui::egui;
 use bevy::prelude::*;
-/////////////////////////////////////////プラグイン設定/////////////////////////////////////////
+///////////////////////////////////////// plugin /////////////////////////////////////////
 pub struct ImePlugin;
 
 impl Plugin for ImePlugin {
@@ -13,14 +13,14 @@ impl Plugin for ImePlugin {
     }
 }
 
-fn reset_unused_ime(mut ime: ResMut<ImeManager>){//update前にすべてのImeTextを使っていない状態にする処理
+fn reset_unused_ime(mut ime: ResMut<ImeManager>){//Make all ImeText unused before update
     for i in &mut ime.ime_texts{
         i.is_used = false;
     }
     ime.count = 0;
 }
 
-fn listen_ime_events(//imeイベントを監視してそれぞれのイベントをImeTextに渡す処理、マウスがウインドウ上にある場合は、そこをIMEの変換位置にする処理
+fn listen_ime_events(//ime look
     mut events: EventReader<Ime>,
     mut ime: ResMut<ImeManager>, 
     mut windows: Query<&mut Window>,
@@ -33,7 +33,7 @@ fn listen_ime_events(//imeイベントを監視してそれぞれのイベント
     window.ime_position = window.cursor_position().unwrap();
 }
 
-fn clear_unused_ime(//update後に使っていないImeTextを削除する処理
+fn clear_unused_ime(//delete unused ImeText after update
     mut ime: ResMut<ImeManager>, 
 ) {
     ime.ime_texts.retain(|i| i.is_used == true);
@@ -98,12 +98,12 @@ impl ImeManager{
         self.ime_texts[res.unwrap()].text = text.to_string();
     }
 
-    fn add(&mut self){//Imeを追加する処理
+    fn add(&mut self){//add Ime
         let it = ImeText::new();
         self.ime_texts.push(it);
     }
 
-    pub fn listen_ime_event(&mut self, event: &Ime){//imeイベントを監視してそれぞれのイベントをImeTextに渡す処理
+    pub fn listen_ime_event(&mut self, event: &Ime){//ime event look
         for i in &mut self.ime_texts{
             i.listen_ime_event(event);
         }
@@ -230,7 +230,7 @@ impl ImeText{
         if teo.cursor_range.is_some(){ 
             self.cursor_index = teo.cursor_range.unwrap().primary.ccursor.index;
         }
-        if self.is_ime_input{//respose.changed()がtrueになるようにする処理
+        if self.is_ime_input{//respose.changed()=true
             teo.response.mark_changed();
         }
         if self.is_ime_input{ 
