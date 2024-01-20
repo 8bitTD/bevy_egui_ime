@@ -1,10 +1,10 @@
 [package]
 name = "bevy_egui_ime"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["https://twitter.com/8bitTD", "8bittd@gmail.com"]
 repository = "https://github.com/8bitTD/bevy_egui_ime"
-keywords = ["ime"]
+keywords = ["ime", "bevy", "egui"]
 license = "MIT"
 readme = "README.md"
 description = "This is a plugin that supports Japanese input with bevy_egui"
