@@ -1,4 +1,5 @@
 This is a plugin that supports Japanese input with bevy_egui
+![240120](https://github.com/8bitTD/bevy_egui_ime/assets/19583059/e1d3780c-8ced-4dfa-8aee-a2e757801ae8)
 
 ```Cargo.toml
 bevy = "*"
