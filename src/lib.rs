@@ -240,11 +240,11 @@ impl ImeText{
                 for _ in 0..self.ime_string_index{
                     res_cursor = teo.galley.cursor_right_one_character(&res_cursor);
                 }
-                let cr = egui::text_edit::CursorRange{
+                let cr = egui::text_selection::CursorRange{
                     primary: res_cursor,
                     secondary: res_cursor,
                 };
-                teo.state.set_cursor_range(Some(cr));
+                teo.state.cursor.set_range(Some(cr));
             }
         }
         if !self.is_cursor_move{
