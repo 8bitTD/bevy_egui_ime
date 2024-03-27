@@ -12,5 +12,5 @@ description = "This is a plugin that supports Japanese input with bevy_egui"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-bevy = "0.12.1"
-bevy_egui = "0.24.0"
+bevy = "0.13.1"
+bevy_egui = "0.26.0"
