@@ -1,6 +1,6 @@
 [package]
 name = "bevy_egui_ime"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["https://twitter.com/8bitTD", "8bittd@gmail.com"]
 repository = "https://github.com/8bitTD/bevy_egui_ime"
