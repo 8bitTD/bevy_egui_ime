@@ -13,4 +13,4 @@ description = "This is a plugin that supports Japanese input with bevy_egui"
 
 [dependencies]
 bevy = "0.13.1"
-bevy_egui = "0.26.0"
+bevy_egui = "0.27.1"
